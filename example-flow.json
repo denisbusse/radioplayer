@@ -1,0 +1,205 @@
+[
+    {
+        "id": "24a719347d466006",
+        "type": "inject",
+        "z": "fb34a7cf28bbfdec",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "E",
+        "payloadType": "str",
+        "x": 710,
+        "y": 60,
+        "wires": [
+            [
+                "cca93fd8c420bac6"
+            ]
+        ]
+    },
+    {
+        "id": "04172336cf1b2954",
+        "type": "inject",
+        "z": "fb34a7cf28bbfdec",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "V100",
+        "payloadType": "str",
+        "x": 710,
+        "y": 100,
+        "wires": [
+            [
+                "cca93fd8c420bac6"
+            ]
+        ]
+    },
+    {
+        "id": "355531ad57498a5f",
+        "type": "inject",
+        "z": "fb34a7cf28bbfdec",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "V080",
+        "payloadType": "str",
+        "x": 710,
+        "y": 140,
+        "wires": [
+            [
+                "cca93fd8c420bac6"
+            ]
+        ]
+    },
+    {
+        "id": "45bf52cc0940f757",
+        "type": "inject",
+        "z": "fb34a7cf28bbfdec",
+        "name": "Station ec2f2076eae414c501f1a1605181666b",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Sec2f2076eae414c501f1a1605181666b",
+        "payloadType": "str",
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "cca93fd8c420bac6"
+            ]
+        ]
+    },
+    {
+        "id": "cca93fd8c420bac6",
+        "type": "tcp request",
+        "z": "fb34a7cf28bbfdec",
+        "name": "",
+        "server": "10.0.0.1",
+        "port": "80",
+        "out": "sit",
+        "ret": "string",
+        "splitc": "0",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1010,
+        "y": 120,
+        "wires": [
+            [
+                "891fef0e98dfe5f2"
+            ]
+        ]
+    },
+    {
+        "id": "10aaa4bf8ea2901f",
+        "type": "debug",
+        "z": "fb34a7cf28bbfdec",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "137f44069701d5d2",
+        "type": "inject",
+        "z": "fb34a7cf28bbfdec",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "IN",
+        "payloadType": "str",
+        "x": 710,
+        "y": 20,
+        "wires": [
+            [
+                "cca93fd8c420bac6"
+            ]
+        ]
+    },
+    {
+        "id": "5c8b6671db40c036",
+        "type": "inject",
+        "z": "fb34a7cf28bbfdec",
+        "name": "Station ec2f2076eae414c501f1a1605181666b",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Sec2f2076eae4144501f1a1605181666b",
+        "payloadType": "str",
+        "x": 580,
+        "y": 220,
+        "wires": [
+            [
+                "cca93fd8c420bac6"
+            ]
+        ]
+    },
+    {
+        "id": "891fef0e98dfe5f2",
+        "type": "json",
+        "z": "fb34a7cf28bbfdec",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1210,
+        "y": 120,
+        "wires": [
+            [
+                "10aaa4bf8ea2901f"
+            ]
+        ]
+    }
+]
